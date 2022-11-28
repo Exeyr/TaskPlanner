@@ -88,6 +88,10 @@ function submitTimedTask() {
                 bubble.style.left = `calc(${newVal}% + (${8 - newVal * 0.15}px))`;
               }
     
+              timedTaskDiv.addEventListener('dblclick', function(event) {
+                timedTaskContainer.removeChild(timedTaskDiv);
+              });
+
     timedTaskContainer.appendChild(timedTaskDiv);
     timedTaskDiv.appendChild(timedTaskSubDiv)
     timedTaskSubDiv.appendChild(timedTaskSlider);
