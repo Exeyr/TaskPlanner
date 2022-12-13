@@ -20,9 +20,10 @@ function submitOneTimeTask() {
     oneTimeTaskDiv.addEventListener('click', function(event){
         clickCount++;
         if(clickCount % 2 !== 0) {
-            event.target.style.backgroundColor = 'blue';
+            event.target.classList.add('oneTimeTaskDivPressed');
         }else{
-            event.target.style.backgroundColor = 'white';
+            event.target.classList.add('oneTimeTaskDiv');
+            event.target.classList.remove('oneTimeTaskDivPressed');
         }
     });
     
@@ -79,9 +80,10 @@ function submitTimedTask() {
                 timedTaskOutput.textContent = val;  
                 
                 if (val == '0') {
-                    timedTaskDiv.style.backgroundColor = 'blue';
+                    timedTaskDiv.classList.add('timedTaskDivComplete');
                 }else{
-                    timedTaskDiv.style.backgroundColor = 'white';
+                    timedTaskDiv.classList.add('timedTaskDiv');
+                    timedTaskDiv.classList.remove('timedTaskDivComplete');
                 }
               
                 // Sorta magic numbers based on size of the native UI thumb
